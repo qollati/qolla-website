@@ -85,3 +85,6 @@ h1,h2 {font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1
  .nav-actions{grid-template-columns:repeat(3,max-content);row-gap:9px;}
  .nav-actions .theme-switch{grid-column:1/-1;justify-self:end;}
 }
+
+/* A softer transition into the footer without a full-width rule. */
+.site-footer { border-top: 0; }

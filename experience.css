@@ -148,3 +148,13 @@
 .experience-section,.invitation,.glimpse-section{-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
 .hero-beta .q-button{min-height:48px;}
 @media(max-width:480px){.hero-beta .q-button,.invitation .q-button{max-width:100%;min-height:52px}.hero-beta{margin-top:23px}}
+
+/* Qolla: seamless full-page transitions. Keep intentional card and control borders. */
+.experience-section,
+.glimpse-section,
+.invitation {
+  border-top: 0;
+  border-bottom: 0;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
