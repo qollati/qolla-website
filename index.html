@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#F7F6F1">
-<meta name="description" content="Qolla is a personal planner for iPhone. Designed for an imperfect day.">
+<meta name="description" content="Qolla is a personal planner for iPhone. Unfinished tasks move to the next day.">
 <title>Qolla | A Personal Planner for iPhone</title>
 <link rel="icon" type="image/png" href="./Qolla_original_logo.png">
 <link rel="stylesheet" href="./styles.css">
@@ -21,7 +21,7 @@
 <a class="skip" href="#main">Skip to main content</a>
 <header class="site-header"><nav class="container site-nav" aria-label="Main navigation">
 <a class="brand" href="./" aria-label="Qolla home"><img class="brand-logo-day" src="./Qolla_original_logo.png" alt="" width="44" height="44"><img class="brand-logo-night" src="./Qolla_original_logo_night.png" alt="" width="44" height="44"><span>qolla</span></a>
-<div class="nav-actions"><a class="home-link" href="./" aria-current="page"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg><span>Home</span></a><a href="./privacy/" >Privacy</a><a href="./support/" >Support</a><div class="theme-switch" role="group" aria-label="Website appearance">
+<div class="nav-actions"><a class="home-link" href="./" aria-current="page"><span>Home</span></a><a href="./privacy/" >Privacy</a><a href="./support/" >Support</a><div class="theme-switch" role="group" aria-label="Website appearance">
 <button type="button" class="theme-option" data-theme-option="day" aria-label="Day mode" aria-pressed="false" title="Day mode"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button>
 <button type="button" class="theme-option" data-theme-option="night" aria-label="Night mode" aria-pressed="false" title="Night mode"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg></button>
 </div></div>
@@ -30,12 +30,12 @@
 <div class="description"><p>Qolla is a place to keep track of your everyday tasks, commitments, plans and notes.</p>
 <p>Some things need doing today. Others can wait. Some take a little longer to work through. Qolla gives you somewhere to keep all of them without having to plan everything at once.</p>
 <p>Created with neurodivergent people in mind, Qolla offers a flexible approach to planning that anyone can use.</p></div>
-<p class="tagline">Designed for an imperfect day.</p><span class="status">Coming soon to the App Store</span><div class="hero-beta"><a class="q-button beta-link" href="https://testflight.apple.com/join/qzBd8jVd" target="_blank" rel="noopener noreferrer" data-beta-link>Become a beta tester <span aria-hidden="true">↗</span></a></div></main>
+<p class="tagline">Unfinished tasks move to the next day.</p><span class="status">Coming soon to the App Store</span><div class="hero-beta"><a class="q-button beta-link" href="https://testflight.apple.com/join/qzBd8jVd" target="_blank" rel="noopener noreferrer" data-beta-link>Become a beta tester <span aria-hidden="true">↗</span></a></div></main>
 <section class="experience-section" id="experience" aria-labelledby="experience-title">
   <div class="experience-intro">
     
-    <h2 id="experience-title">There is always tomorrow.</h2>
-    <p>Check off what you did. See what happens tomorrow.</p>
+    <h2 id="experience-title">What happens to unfinished tasks?</h2>
+    <p>Check off what you finish today. The rest moves to the next day.</p>
   </div>
   <div class="moment" data-moment>
     <div class="moment-top"><span class="moment-count" data-count aria-live="polite">0 of 3 done</span></div>
@@ -46,7 +46,7 @@
       <label class="moment-task"><input type="checkbox" data-task="2"><span class="moment-check" aria-hidden="true"></span><span>Pick up groceries</span></label>
     </div>
     <p class="moment-note" data-message aria-live="polite">You can leave some things for another day.</p>
-    <div class="moment-actions"><button class="q-button moment-next" type="button" data-next>See tomorrow <span aria-hidden="true">→</span></button><button class="moment-reset" type="button" data-reset hidden>Try again ↺</button></div>
+    <div class="moment-actions"><button class="q-button moment-next" type="button" data-next>See next day <span aria-hidden="true">→</span></button><button class="moment-reset" type="button" data-reset hidden>Try again ↺</button></div>
     <div class="moment-after" data-after hidden>
       <div class="moment-after-divider"></div>
       <p class="moment-after-title">What you finished stays done. The rest comes with you.</p>
@@ -55,7 +55,7 @@
       <div class="moment-reflect" data-reflect hidden><p>Sometimes a task needs more than another reminder.</p><blockquote>What is getting in the way?</blockquote><p>Qolla can help you reflect on a task that keeps moving, when you choose.</p></div>
     </div>
   </div>
-  <p class="experience-disclaimer">Demo only. Nothing is saved.</p>
+  <p class="experience-disclaimer">Demo only.</p>
 </section>
 <section class="glimpse-section" aria-labelledby="glimpse-heading"><div class="glimpse-inner">
   <div class="glimpse-heading"><h2 id="glimpse-heading">A look inside Qolla.</h2></div>
