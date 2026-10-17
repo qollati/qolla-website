@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F7F6F1">
+<meta name="description" content="Qolla is a personal planner for iPhone. Designed for an imperfect day.">
+<title>Qolla | A Personal Planner for iPhone</title>
+<link rel="icon" type="image/png" href="./Qolla_original_logo.png">
+<link rel="stylesheet" href="./styles.css">
+<script>try{var t=localStorage.getItem("qolla-website-theme");document.documentElement.dataset.theme=(t==="day"||t==="night")?t:(matchMedia("(prefers-color-scheme: dark)").matches?"night":"day")}catch(e){document.documentElement.dataset.theme=matchMedia("(prefers-color-scheme: dark)").matches?"night":"day"}</script>
+<style>:root {--sky:linear-gradient(rgba(249,248,244,.61),rgba(249,248,244,.61)),url("./QollaSkyDay.png")}:root[data-theme="night"]{--sky:linear-gradient(rgba(15,18,39,.56),rgba(15,18,39,.70)),url("./QollaSkyNight.png")}</style>
+<script src="./theme.js" defer></script>
+<link rel="stylesheet" href="./experience.css">
+<script src="./experience.js" defer></script>
+<script src="./gallery.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header"><nav class="container site-nav" aria-label="Main navigation">
+<a class="brand" href="./" aria-label="Qolla home"><img class="brand-logo-day" src="./Qolla_original_logo.png" alt="" width="44" height="44"><img class="brand-logo-night" src="./Qolla_original_logo_night.png" alt="" width="44" height="44"><span>qolla</span></a>
+<div class="nav-actions"><a class="home-link" href="./" aria-current="page"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg><span>Home</span></a><a href="./privacy/" >Privacy</a><a href="./support/" >Support</a><div class="theme-switch" role="group" aria-label="Website appearance">
+<button type="button" class="theme-option" data-theme-option="day" aria-label="Day mode" aria-pressed="false" title="Day mode"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button>
+<button type="button" class="theme-option" data-theme-option="night" aria-label="Night mode" aria-pressed="false" title="Night mode"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"/></svg></button>
+</div></div>
+</nav></header>
+<main id="main" class="hero"><div class="eyebrow">A personal planner for iPhone</div><h1>Qolla</h1>
+<div class="description"><p>Qolla is a place to keep track of your everyday tasks, commitments, plans and notes.</p>
+<p>Some things need doing today. Others can wait. Some take a little longer to work through. Qolla gives you somewhere to keep all of them without having to plan everything at once.</p>
+<p>Created with neurodivergent people in mind, Qolla offers a flexible approach to planning that anyone can use.</p></div>
+<p class="tagline">Designed for an imperfect day.</p><span class="status">Coming soon to the App Store</span><div class="hero-beta"><a class="q-button beta-link" href="https://testflight.apple.com/join/qzBd8jVd" target="_blank" rel="noopener noreferrer" data-beta-link>Become a beta tester <span aria-hidden="true">↗</span></a><p class="beta-footnote">iPhone only · Public TestFlight beta</p></div></main>
+<section class="experience-section" id="experience" aria-labelledby="experience-title">
+  <div class="experience-intro">
+    <span class="section-kicker">A SMALL MOMENT WITH QOLLA</span>
+    <h2 id="experience-title">There is always tomorrow.</h2>
+    <p>Pick what you got done. Leave something unfinished. Then see what happens next.</p>
+  </div>
+  <div class="moment" data-moment>
+    <div class="moment-top"><span class="moment-overline">YOUR DAY, YOUR PACE</span><span class="moment-count" data-count aria-live="polite">0 of 3 done</span></div>
+    <div class="moment-head"><div><span class="moment-small" data-date-label>AN ORDINARY DAY</span><h3 data-day-title>Today</h3></div></div>
+    <div class="moment-items" data-task-list aria-label="Example everyday tasks">
+      <label class="moment-task"><input type="checkbox" data-task="0"><span class="moment-check" aria-hidden="true"></span><span>Call the bank about the fee</span></label>
+      <label class="moment-task"><input type="checkbox" data-task="1"><span class="moment-check" aria-hidden="true"></span><span>Plan the week</span></label>
+      <label class="moment-task"><input type="checkbox" data-task="2"><span class="moment-check" aria-hidden="true"></span><span>Pick up groceries</span></label>
+    </div>
+    <p class="moment-note" data-message aria-live="polite">You can leave some things for another day.</p>
+    <div class="moment-actions"><button class="q-button moment-next" type="button" data-next>See tomorrow <span aria-hidden="true">→</span></button><button class="moment-reset" type="button" data-reset hidden>Try again ↺</button></div>
+    <div class="moment-after" data-after hidden>
+      <div class="moment-after-divider"></div>
+      <p class="moment-after-title">What you finished stays done. The rest comes with you.</p>
+      <p>No wall of overdue tasks. No score to keep up.</p>
+      <button class="moment-reflect-toggle" type="button" data-reflect-toggle aria-expanded="false">And if something keeps moving? <span aria-hidden="true">↓</span></button>
+      <div class="moment-reflect" data-reflect hidden><p>Sometimes a task needs more than another reminder.</p><blockquote>What is getting in the way?</blockquote><p>Qolla can help you reflect on a task that keeps moving, when you choose.</p></div>
+    </div>
+  </div>
+  <p class="experience-disclaimer">A small, interactive example. It does not access or save your Qolla information.</p>
+</section>
+<section class="glimpse-section" aria-labelledby="glimpse-heading"><div class="glimpse-inner">
+  <div class="glimpse-heading"><span class="section-kicker">INSIDE QOLLA</span><h2 id="glimpse-heading">Different things need different places.</h2><p>A glimpse of how Qolla makes room for everyday life.</p></div>
+  <div class="glimpse-gallery">
+    <figure class="glimpse-shot"><button type="button" class="shot-open" data-fullscreen-shot aria-label="Enlarge Today screenshot"><span class="screenshot-frame"><img src="./qolla-today.webp" alt="Qolla Today screen in Day mode with the Morning anchor, Commitments, Money and Tasks." width="1320" height="2868" loading="lazy" decoding="async"></span><span class="shot-zoom" aria-hidden="true">View full screen ↗</span></button><figcaption><strong>Today</strong><span>For what today holds.</span></figcaption></figure>
+    <figure class="glimpse-shot"><button type="button" class="shot-open" data-fullscreen-shot aria-label="Enlarge Plans screenshot"><span class="screenshot-frame"><img src="./qolla-plans-explainer.webp" alt="The Qolla Plans explanation showing the Buy a car example, steps and Middle Shelf." width="1320" height="2868" loading="lazy" decoding="async"></span><span class="shot-zoom" aria-hidden="true">View full screen ↗</span></button><figcaption><strong>Plans</strong><span>For what takes a little longer.</span></figcaption></figure>
+    <figure class="glimpse-shot"><button type="button" class="shot-open" data-fullscreen-shot aria-label="Enlarge Practices screenshot"><span class="screenshot-frame"><img src="./qolla-practices.webp" alt="Qolla Practices in Night mode showing optional Islamic prayer times and morning, evening and night practices." width="1320" height="2868" loading="lazy" decoding="async"></span><span class="shot-zoom" aria-hidden="true">View full screen ↗</span></button><figcaption><strong>Practices</strong><span>For the things you return to, with optional prayer times.</span></figcaption></figure>
+    <figure class="glimpse-shot"><button type="button" class="shot-open" data-fullscreen-shot aria-label="Enlarge Reflections screenshot"><span class="screenshot-frame"><img src="./qolla-reflections-explainer.webp" alt="The Qolla Reflections explanation showing a task that keeps moving and a day check-in." width="1320" height="2868" loading="lazy" decoding="async"></span><span class="shot-zoom" aria-hidden="true">View full screen ↗</span></button><figcaption><strong>Reflections</strong><span>For understanding what gets in the way.</span></figcaption></figure>
+  </div>
+  <p class="glimpse-hint">Tap a screen to take a closer look.</p>
+</div></section>
+<dialog class="qolla-image-dialog" aria-label="Qolla screenshot" data-shot-dialog><div class="qolla-image-dialog-inner"><button type="button" class="qolla-dialog-close" data-dialog-close aria-label="Close screenshot">Close ✕</button><img alt="" data-dialog-image></div></dialog>
+<section class="invitation" aria-labelledby="invitation-heading"><span class="section-kicker">QOLLA FOR IPHONE</span><h2 id="invitation-heading">Curious to try it?</h2><p>Qolla is getting ready for the App Store. You can try the beta and tell me what you think.</p><a class="q-button beta-link" href="https://testflight.apple.com/join/qzBd8jVd" target="_blank" rel="noopener noreferrer" data-beta-link>Become a beta tester <span aria-hidden="true">↗</span></a><p class="invitation-small">30 days free · One-time unlock · No subscription</p></section>
+<footer class="site-footer"><div class="container footer-inner"><span>&copy; 2026 Qolla</span><div class="footer-links"><a href="./">Home</a><a href="./privacy/">Privacy Policy</a><a href="./support/">Support</a><a href="./support/#contact">Contact</a></div></div></footer>
+</body></html>
