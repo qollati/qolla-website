@@ -1,91 +1,98 @@
-/* Qolla mobile-only enhancements. Load AFTER styles.css and experience.css. */
-@media screen and (max-width: 767px) {
-  /* Concept B: wordmark above; compact toggle left and links right. */
+/* Qolla mobile-only refinement, October 2026.
+   Loads after styles.css / experience.css and does not affect widths >=768px. */
+@media (max-width:767px) {
+  /* Compact header: logo left, a single change-theme icon right; links on second row. */
   .site-header .site-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    gap: 7px;
-    padding: 11px 16px 12px;
-    min-height: 0;
+    position:relative; display:flex; flex-direction:column; align-items:stretch;
+    gap:3px; min-height:0; width:100%;
+    padding:10px 20px 9px;
   }
-  .site-header .site-nav .brand {
-    align-self: flex-start;
-    min-height: 36px;
-    gap: 7px;
-  }
-  .site-header .site-nav .brand img { width: 34px; height: 34px; }
-  .site-header .site-nav .brand span { font-size: 24px; }
+  .site-header .brand { align-self:flex-start; min-height:46px; gap:7px; }
+  .site-header .brand img { width:36px; height:36px; }
+  .site-header .brand span { font-size:25px; line-height:1.1; }
   .site-header .nav-actions {
-    display: grid;
-    width: 100%;
-    grid-template-columns: minmax(83px, 1fr) repeat(3, max-content);
-    column-gap: clamp(9px, 2.6vw, 16px);
-    align-items: center;
-    justify-content: initial;
-    min-width: 0;
+    display:flex; flex-direction:row; flex-wrap:nowrap; align-items:center;
+    justify-content:flex-end; width:100%; min-width:0;
+    gap:clamp(14px,4vw,23px); padding:0 7px 0 0;
+    margin:0;
   }
+  .site-header .nav-actions > a {
+    display:inline-flex; align-items:center; flex:none; white-space:nowrap;
+    min-height:42px; font-size:clamp(13px,3.6vw,15px); line-height:1.2;
+  }
+  .site-header .nav-actions .home-link { gap:4px; }
+  .site-header .nav-actions .home-link svg { width:16px; height:16px; }
   .site-header .nav-actions > .theme-switch {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: start;
-    margin: 0;
-    padding: 2px;
-    gap: 1px;
+    position:absolute; top:10px; right:22px; left:auto;
+    display:flex; justify-content:center; align-items:center;
+    width:45px; height:45px; min-width:45px; padding:0; margin:0;
+    border:1px solid var(--line); background:var(--control);
+    border-radius:50%;
   }
-  .site-header .nav-actions > a { grid-row: 1; white-space: nowrap; font-size: clamp(13px, 3.5vw, 15px); min-height: 44px; display: inline-flex; align-items: center; }
-  .site-header .nav-actions > a:nth-child(1) { grid-column: 2; }
-  .site-header .nav-actions > a:nth-child(2) { grid-column: 3; }
-  .site-header .nav-actions > a:nth-child(3) { grid-column: 4; }
-  .site-header .theme-option { width: 39px; height: 40px; min-height: 40px; }
-  .site-header .theme-option svg { width: 19px; height: 19px; }
-  /* Ultra-small phones: the nav links form a neat right-aligned row. */
-}
-@media screen and (max-width: 355px) {
-    .site-header .site-nav { padding-inline: 12px; }
-    .site-header .nav-actions { column-gap: 7px; grid-template-columns: minmax(79px, 1fr) repeat(3, max-content); }
-    .site-header .nav-actions > a { font-size: 12px; }
-    .site-header .theme-option { width: 36px; height: 40px; }
-    .site-header .nav-actions .home-link svg { display: none; }
+  /* Show only the alternative theme option, not an active/inactive two-icon switch. */
+  .site-header .theme-option { width:43px; height:43px; min-height:43px; border:0; border-radius:50%; }
+  .site-header .theme-option svg { width:21px; height:21px; }
+  .site-header .theme-option[aria-pressed="true"] { display:none; }
+  .site-header .theme-option[aria-pressed="false"] { display:grid; color:var(--ink); background:transparent; }
+  .site-header .theme-option:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+  /* Safer narrow-phone link layout with a little room on the right edge. */
+  @media (max-width:355px) {
+    .site-header .site-nav { padding-inline:13px; }
+    .site-header .nav-actions { gap:11px; padding-right:5px; }
+    .site-header .nav-actions > a { font-size:12.5px; }
+    .site-header .nav-actions .home-link svg { display:none; }
+    .site-header .nav-actions > .theme-switch { right:15px; }
   }
-@media screen and (max-width: 767px) {
-  /* Only remove outer section dividers, never card borders. */
-  .experience-section, .glimpse-section, .invitation, .site-footer { border-top: none !important; }
-  .glimpse-section { padding-top: 64px; padding-bottom: 65px; }
+  /* A true indexed carousel: only one screenshot participates in layout at a time. */
   .glimpse-gallery {
-    display: flex !important;
-    grid-template-columns: none !important;
-    width: 100%;
-    max-width: 100% !important;
-    margin: 29px auto 0;
-    gap: 0 !important;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    scroll-padding-inline: 0;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
+    display:block !important; width:100%; max-width:100% !important;
+    margin:26px auto 0; overflow:visible !important;
+    scroll-snap-type:none !important;
   }
-  .glimpse-gallery::-webkit-scrollbar { display: none; }
   .glimpse-gallery > .glimpse-shot {
-    flex: 0 0 100%;
-    width: 100%;
-    max-width: none;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    margin: 0;
-    padding: 0 clamp(2px, 2vw, 12px);
-    box-sizing: border-box;
+    display:none !important; width:100%; max-width:330px;
+    margin:0 auto; padding:0; box-sizing:border-box;
   }
-  .glimpse-gallery .screenshot-frame { max-width: 320px; margin-inline: auto; }
-  .glimpse-gallery .glimpse-shot figcaption { max-width: 330px; margin-inline: auto; }
-  .qolla-mobile-gallery-nav { display: flex; justify-content: space-between; align-items: center; gap: 10px; max-width: 360px; margin: 22px auto 0; }
-  .qolla-mobile-gallery-nav button { border: 1px solid var(--line); background: var(--control); color: var(--ink); border-radius: 999px; min-width: 82px; min-height: 44px; padding: 9px 15px; font: inherit; cursor: pointer; }
-  .qolla-mobile-gallery-nav button:disabled { opacity: .4; cursor: not-allowed; }
-  .qolla-mobile-gallery-nav button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
-  .qolla-mobile-gallery-count { font-size: 13px; color: var(--body); white-space: nowrap; }
-  .glimpse-hint { margin-top: 16px; }
+  .glimpse-gallery > .glimpse-shot[data-qolla-current="true"] { display:flex !important; flex-direction:column; }
+  .glimpse-gallery .screenshot-frame {
+    display:block; width:100%; max-width:325px; margin:0 auto;
+    aspect-ratio:auto; padding:8px; overflow:hidden;
+  }
+  .glimpse-gallery .screenshot-frame img {
+    display:block; width:auto; max-width:100%; height:auto;
+    max-height:min(62svh,620px); object-fit:contain; margin:0 auto;
+  }
+  .glimpse-gallery .glimpse-shot figcaption { max-width:330px; margin:0 auto; padding-top:12px; }
+  .qolla-mobile-gallery-nav {
+    display:flex; align-items:center; justify-content:space-between;
+    gap:10px; margin:22px auto 0; max-width:345px; width:100%;
+  }
+  .qolla-mobile-gallery-nav button {
+    appearance:none; border:1px solid var(--line); border-radius:999px;
+    padding:10px 15px; min-width:86px; min-height:44px;
+    color:var(--ink); background:var(--control); font:inherit; cursor:pointer;
+  }
+  .qolla-mobile-gallery-nav button:disabled { opacity:.42; cursor:default; }
+  .qolla-mobile-gallery-nav button:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+  .qolla-mobile-gallery-count { color:var(--body); font-size:14px; white-space:nowrap; }
+  .glimpse-hint { margin:14px auto 0; }
+  /* No full-width section dividing lines. Preserve card and control outlines. */
+  .experience-section, .glimpse-section, .invitation, .site-footer {
+    border-top:0 !important; border-bottom:0 !important;
+  }
+  /* Deliberately centred footer with copyright beneath the links. */
+  .site-footer { padding:24px 0 32px; }
+  .site-footer .footer-inner {
+    display:flex; flex-direction:column-reverse; align-items:center; justify-content:center;
+    text-align:center; width:100%; gap:17px;
+    padding-inline:clamp(18px,5vw,28px);
+  }
+  .site-footer .footer-links {
+    display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
+    gap:10px clamp(14px,4vw,24px); width:100%;
+  }
+  .site-footer .footer-links a { min-height:40px; display:inline-flex; align-items:center; }
+  .site-footer .footer-inner > span { display:block; font-size:13px; opacity:.85; }
 }
-@media screen and (min-width: 768px) { .qolla-mobile-gallery-nav { display: none !important; } }
-@media (prefers-reduced-motion: reduce) { .glimpse-gallery { scroll-behavior: auto !important; } }
+@media (min-width:768px) { .qolla-mobile-gallery-nav { display:none !important; } }
+@media (prefers-reduced-motion:reduce) { .glimpse-gallery { scroll-behavior:auto !important; } }
