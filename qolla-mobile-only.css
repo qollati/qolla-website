@@ -1,0 +1,91 @@
+/* Qolla mobile-only enhancements. Load AFTER styles.css and experience.css. */
+@media screen and (max-width: 767px) {
+  /* Concept B: wordmark above; compact toggle left and links right. */
+  .site-header .site-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 7px;
+    padding: 11px 16px 12px;
+    min-height: 0;
+  }
+  .site-header .site-nav .brand {
+    align-self: flex-start;
+    min-height: 36px;
+    gap: 7px;
+  }
+  .site-header .site-nav .brand img { width: 34px; height: 34px; }
+  .site-header .site-nav .brand span { font-size: 24px; }
+  .site-header .nav-actions {
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(83px, 1fr) repeat(3, max-content);
+    column-gap: clamp(9px, 2.6vw, 16px);
+    align-items: center;
+    justify-content: initial;
+    min-width: 0;
+  }
+  .site-header .nav-actions > .theme-switch {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    margin: 0;
+    padding: 2px;
+    gap: 1px;
+  }
+  .site-header .nav-actions > a { grid-row: 1; white-space: nowrap; font-size: clamp(13px, 3.5vw, 15px); min-height: 44px; display: inline-flex; align-items: center; }
+  .site-header .nav-actions > a:nth-child(1) { grid-column: 2; }
+  .site-header .nav-actions > a:nth-child(2) { grid-column: 3; }
+  .site-header .nav-actions > a:nth-child(3) { grid-column: 4; }
+  .site-header .theme-option { width: 39px; height: 40px; min-height: 40px; }
+  .site-header .theme-option svg { width: 19px; height: 19px; }
+  /* Ultra-small phones: the nav links form a neat right-aligned row. */
+}
+@media screen and (max-width: 355px) {
+    .site-header .site-nav { padding-inline: 12px; }
+    .site-header .nav-actions { column-gap: 7px; grid-template-columns: minmax(79px, 1fr) repeat(3, max-content); }
+    .site-header .nav-actions > a { font-size: 12px; }
+    .site-header .theme-option { width: 36px; height: 40px; }
+    .site-header .nav-actions .home-link svg { display: none; }
+  }
+@media screen and (max-width: 767px) {
+  /* Only remove outer section dividers, never card borders. */
+  .experience-section, .glimpse-section, .invitation, .site-footer { border-top: none !important; }
+  .glimpse-section { padding-top: 64px; padding-bottom: 65px; }
+  .glimpse-gallery {
+    display: flex !important;
+    grid-template-columns: none !important;
+    width: 100%;
+    max-width: 100% !important;
+    margin: 29px auto 0;
+    gap: 0 !important;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .glimpse-gallery::-webkit-scrollbar { display: none; }
+  .glimpse-gallery > .glimpse-shot {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: none;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    margin: 0;
+    padding: 0 clamp(2px, 2vw, 12px);
+    box-sizing: border-box;
+  }
+  .glimpse-gallery .screenshot-frame { max-width: 320px; margin-inline: auto; }
+  .glimpse-gallery .glimpse-shot figcaption { max-width: 330px; margin-inline: auto; }
+  .qolla-mobile-gallery-nav { display: flex; justify-content: space-between; align-items: center; gap: 10px; max-width: 360px; margin: 22px auto 0; }
+  .qolla-mobile-gallery-nav button { border: 1px solid var(--line); background: var(--control); color: var(--ink); border-radius: 999px; min-width: 82px; min-height: 44px; padding: 9px 15px; font: inherit; cursor: pointer; }
+  .qolla-mobile-gallery-nav button:disabled { opacity: .4; cursor: not-allowed; }
+  .qolla-mobile-gallery-nav button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+  .qolla-mobile-gallery-count { font-size: 13px; color: var(--body); white-space: nowrap; }
+  .glimpse-hint { margin-top: 16px; }
+}
+@media screen and (min-width: 768px) { .qolla-mobile-gallery-nav { display: none !important; } }
+@media (prefers-reduced-motion: reduce) { .glimpse-gallery { scroll-behavior: auto !important; } }
