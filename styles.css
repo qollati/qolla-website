@@ -270,3 +270,8 @@ h1,h2 {font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1
   .site-header .nav-actions .theme-switch { grid-column: 1 / -1; justify-self: end; }
   .hero { padding: 35px 17px 56px; }
 }
+
+/* Header refinement: icon-only Qolla brand on every display.
+   The linked brand retains its aria-label="Qolla home". */
+.site-header .brand span { display:none !important; }
+.site-header .brand { gap:0; }

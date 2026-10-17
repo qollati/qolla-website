@@ -96,3 +96,31 @@
 }
 @media (min-width:768px) { .qolla-mobile-gallery-nav { display:none !important; } }
 @media (prefers-reduced-motion:reduce) { .glimpse-gallery { scroll-behavior:auto !important; } }
+
+/* October 2026: half-size visual appearance control on iPhone only.
+   Keep a 44px button target for touch and VoiceOver. */
+@media (max-width:767px) {
+  .site-header .brand { min-height:44px; }
+  .site-header .brand img { width:37px; height:37px; }
+  .site-header .nav-actions > .theme-switch {
+    width:44px !important; height:44px !important; min-width:44px !important;
+    border:0 !important; border-radius:50%; background:transparent !important;
+    right:19px !important;
+  }
+  .site-header .theme-option {
+    width:44px !important; height:44px !important; min-height:44px !important;
+    position:relative; place-items:center;
+    background:transparent !important;
+  }
+  .site-header .theme-option[aria-pressed="true"] { display:none !important; }
+  .site-header .theme-option[aria-pressed="false"] { display:grid !important; }
+  .site-header .theme-option[aria-pressed="false"]::before {
+    content:""; position:absolute; z-index:0; width:25px; height:25px;
+    border:1px solid var(--line); border-radius:50%;
+    background:var(--control); pointer-events:none;
+  }
+  .site-header .theme-option svg {
+    width:13px !important; height:13px !important; position:relative; z-index:1;
+  }
+  .site-header .theme-option:focus-visible { outline:3px solid var(--focus); outline-offset:0; }
+}
