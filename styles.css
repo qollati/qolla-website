@@ -207,3 +207,66 @@ h1,h2 {font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1
     justify-self: end;
   }
 }
+
+
+/* Qolla mobile refinement — intentionally restricted to phone sizes.
+   Desktop and tablet presentation remain unchanged. */
+@media (max-width: 600px) {
+  html, body { max-width: 100%; overflow-x: clip; }
+  .site-header .site-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 7px;
+    min-height: 0;
+    padding: 10px 17px 12px;
+  }
+  .site-nav .brand { gap: 7px; align-self: flex-start; min-height: 39px; }
+  .site-nav .brand img { width: 36px; height: 36px; }
+  .site-nav .brand span { font-size: 25px; line-height: 1.15; }
+  .site-header .nav-actions {
+    display: grid;
+    grid-template-columns: max-content max-content max-content minmax(0, 1fr);
+    width: 100%;
+    gap: clamp(8px, 2.4vw, 16px);
+    align-items: center;
+    justify-content: stretch;
+  }
+  .site-header .nav-actions a {
+    font-size: clamp(13px, 3.55vw, 15px);
+    font-weight: 500;
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .site-header .nav-actions .home-link { gap: 4px; }
+  .site-header .nav-actions .home-link svg { width: 16px; height: 16px; }
+  .site-header .nav-actions .theme-switch { justify-self: end; margin: 0; gap: 1px; padding: 2px; }
+  .site-header .theme-option { width: 38px; height: 40px; min-height: 40px; }
+  .site-header .theme-option svg { width: 20px; height: 20px; }
+  .hero {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 42px 21px 64px;
+    text-align: center;
+  }
+  .hero .eyebrow { font-size: 10.5px; line-height: 1.6; letter-spacing: .15em; }
+  .hero h1 { font-size: clamp(52px, 14vw, 70px); margin: 18px 0 22px; }
+  .hero .description { max-width: 480px; font-size: 15.5px; line-height: 1.62; font-weight: 400; }
+  .hero .description p { margin: 0 0 16px; }
+  .hero .tagline { margin-top: 30px; font-size: clamp(23px, 6vw, 28px); }
+  .hero .status { margin-top: 25px; }
+  .hero-beta { margin-top: 14px; }
+  .hero-beta .q-button { min-width: 0; width: min(100%, 270px); }
+  .site-footer { padding: 25px 0 28px; }
+  .site-footer .footer-inner { padding-inline: 21px; gap: 11px; }
+  .site-footer .footer-links { gap: 10px 19px; }
+}
+@media (max-width: 355px) {
+  .site-header .site-nav { padding-inline: 15px; gap: 4px; }
+  .site-header .nav-actions { grid-template-columns: repeat(3, max-content); column-gap: 17px; row-gap: 2px; }
+  .site-header .nav-actions a { font-size: 14px; }
+  .site-header .nav-actions .theme-switch { grid-column: 1 / -1; justify-self: end; }
+  .hero { padding: 35px 17px 56px; }
+}
